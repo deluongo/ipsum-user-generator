@@ -333,7 +333,7 @@
         }
 
         .two {
-          flex-grow: 2;
+          flex-grow: 4;
 
         }
       } /* end media 768 */

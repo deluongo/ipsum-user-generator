@@ -317,7 +317,25 @@
           display: flex;
         }
 
+        .flex-item {
+          /* Width = Height when flex-flow: column;*/
+          height: 100px;
+          /*Combines flex-grow, flex-shrink, and flex-basis
+          in that order*/
+          flex: 1 0 200px;
+          /*Flex-basis prevents scrolling*/
+          flex-basis: 200px;
+        }
 
+        .one {
+          flex-grow: 1;
+
+        }
+
+        .two {
+          flex-grow: 2;
+
+        }
       } /* end media 768 */
     </style>
 

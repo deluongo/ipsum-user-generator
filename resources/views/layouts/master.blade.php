@@ -14,273 +14,6 @@
 
     <style>
 
-            /* Updated version - 24th Nov 2014 */
-        /*
-        html, body, div, span, applet, object, iframe,
-        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-        a, abbr, acronym, address, big, cite, code,
-        del, dfn, em, img, ins, kbd, q, s, samp,
-        small, strike, strong, sub, sup, tt, var,
-        b, u, i, center,
-        dl, dt, dd, ol, ul, li,
-        fieldset, form, label, legend,
-        table, caption, tbody, tfoot, thead, tr, th, td,
-        article, aside, canvas, details, embed,
-        figure, figcaption, footer, header, hgroup,
-        menu, nav, output, ruby, section, summary,
-        time, mark, audio, video {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        font: inherit;
-        font-size: 100%;
-        vertical-align: baseline;
-        }
-
-        html {
-        line-height: 1;
-        }
-
-        ol, ul {
-        list-style: none;
-        }
-
-        table {
-        border-collapse: collapse;
-        border-spacing: 0;
-        }
-
-        caption, th, td {
-        text-align: left;
-        font-weight: normal;
-        vertical-align: middle;
-        }
-
-        q, blockquote {
-        quotes: none;
-        }
-        q:before, q:after, blockquote:before, blockquote:after {
-        content: "";
-        content: none;
-        }
-
-        a img {
-        border: none;
-        }
-
-        article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
-        display: block;
-        }
-
-
-        body {
-        background: #f77462;
-        font-family: Lato, sans-serif;
-        }
-
-        @font-face {
-        font-family: 'Genericons';
-        src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/genericons-regular-webfont.eot");
-        src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/genericons-regular-webfont.woff") format("woff"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/genericons-regular-webfont.eot") format("truetype");
-        font-weight: normal;
-        font-style: normal;
-        }
-        [class*="genericon"] {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        -webkit-font-smoothing: antialiased;
-        font-size: 16px;
-        line-height: 1;
-        font-family: 'Genericons';
-        text-decoration: inherit;
-        font-weight: normal;
-        font-style: normal;
-        vertical-align: top;
-        }
-
-
-        [class*="genericon"] {
-        *overflow: auto;
-        *zoom: 1;
-        *display: inline;
-        }
-
-        .container {
-        margin: 0px auto;
-        }
-
-        .accordion {
-        background: #5ab2ca;
-        width: 100%;
-        min-width: 950px;
-        display: block;
-        list-style-type: none;
-        overflow: hidden;
-        height: 200px;
-        font-size: 0;
-        }
-
-        .tabs {
-        display: inline-block;
-        background-color: #6dc5dd;
-        border-right: #5ab2ca 1px solid;
-        width: 80px;
-        height: 200px;
-        overflow: hidden;
-        position: relative;
-        margin: 0;
-        font-size: 16px;
-        -moz-transition: all 0.4s ease-in-out 0.1s;
-        -o-transition: all 0.4s ease-in-out 0.1s;
-        -webkit-transition: all 0.4s ease-in-out;
-        -webkit-transition-delay: 0.1s;
-        transition: all 0.4s ease-in-out 0.1s;
-        }
-        .tabs:hover {
-        width: 450px;
-        }
-        .tabs:hover .social-links a:before {
-        margin-left: -100px;
-        }
-        .tabs:hover .social-links a:after {
-        margin-left: -5px;
-        }
-        .tabs .paragraph {
-        position: relative;
-        width: 500px;
-        margin-left: 80px;
-        padding: 50px 0 0 10px;
-        height: 200px;
-        background: #fff;
-        }
-        .tabs .paragraph h1 {
-        font-size: 2.5em;
-        margin-bottom: 10px;
-        }
-        .tabs .paragraph p {
-        font-size: 0.88em;
-        line-height: 1.5em;
-        padding-right: 30px;
-        }
-
-        .social-links {
-        display: block;
-        }
-        .social-links a {
-        display: block;
-        text-indent: -9999px;
-        font-size: 0;
-        line-height: 0;
-        }
-        .social-links a:before, .social-links a:after {
-        -moz-transition: all 0.4s ease-in-out 0.1s;
-        -o-transition: all 0.4s ease-in-out 0.1s;
-        -webkit-transition: all 0.4s ease-in-out;
-        -webkit-transition-delay: 0.1s;
-        transition: all 0.4s ease-in-out 0.1s;
-        width: 80px;
-        height: 200px;
-        position: absolute;
-        text-indent: 0;
-        padding-top: 90px;
-        padding-left: 25px;
-        display: block;
-        font: normal 30px Genericons;
-        color: #fff;
-        }
-        .social-links a:after {
-        font-size: 48px;
-        padding-left: 20px;
-        padding-top: 80px;
-        margin-left: 85px;
-        }
-
-        .twitter-icon a:before, .twitter-icon a:after {
-        content: '\f202';
-        }
-        .twitter-icon a:after {
-        background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzdhZGNmOSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzRiYzlmNSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-        background-size: 100%;
-        background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7adcf9), color-stop(100%, #4bc9f5));
-        background-image: -moz-linear-gradient(#7adcf9, #4bc9f5);
-        background-image: -webkit-linear-gradient(#7adcf9, #4bc9f5);
-        background-image: linear-gradient(#7adcf9, #4bc9f5);
-        }
-
-        .facebook-icon a:before, .facebook-icon a:after {
-        content: '\f204';
-        }
-        .facebook-icon a:after {
-        background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzU0OGFiZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzI5NWI5ZSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-        background-size: 100%;
-        background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #548abf), color-stop(100%, #295b9e));
-        background-image: -moz-linear-gradient(#548abf, #295b9e);
-        background-image: -webkit-linear-gradient(#548abf, #295b9e);
-        background-image: linear-gradient(#548abf, #295b9e);
-        }
-
-        .linkedin-icon a:before, .linkedin-icon a:after {
-        content: '\f208';
-        }
-        .linkedin-icon a:after {
-        background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwYTljZCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwODNiNCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-        background-size: 100%;
-        background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #00a9cd), color-stop(100%, #0083b4));
-        background-image: -moz-linear-gradient(#00a9cd, #0083b4);
-        background-image: -webkit-linear-gradient(#00a9cd, #0083b4);
-        background-image: linear-gradient(#00a9cd, #0083b4);
-        }
-
-        .insta-icon a:before, .insta-icon a:after {
-        content: '\f215';
-        }
-        .insta-icon a:after {
-        background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzdmYzEyMSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzI5ODczMyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-        background-size: 100%;
-        background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7fc121), color-stop(100%, #298733));
-        background-image: -moz-linear-gradient(#7fc121, #298733);
-        background-image: -webkit-linear-gradient(#7fc121, #298733);
-        background-image: linear-gradient(#7fc121, #298733);
-        }
-
-        .youtube-icon a:before, .youtube-icon a:after {
-        content: '\f213';
-        }
-        .youtube-icon a:after {
-        background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2RmMTkyYSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2M0MTIyMiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-        background-size: 100%;
-        background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #df192a), color-stop(100%, #c41222));
-        background-image: -moz-linear-gradient(#df192a, #c41222);
-        background-image: -webkit-linear-gradient(#df192a, #c41222);
-        background-image: linear-gradient(#df192a, #c41222);
-        }
-
-        .tumblr-icon a:before, .tumblr-icon a:after {
-        content: '\f214';
-        }
-        .tumblr-icon a:after {
-        background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzI4M2U1NiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzMyNTM3MiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-        background-size: 100%;
-        background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #283e56), color-stop(100%, #325372));
-        background-image: -moz-linear-gradient(#283e56, #325372);
-        background-image: -webkit-linear-gradient(#283e56, #325372);
-        background-image: linear-gradient(#283e56, #325372);
-        }
-
-        .dribbble-icon a:before, .dribbble-icon a:after {
-        content: '\f201';
-        }
-        .dribbble-icon a:after {
-        background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2UwM2E3MCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2YxODliOCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-        background-size: 100%;
-        background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e03a70), color-stop(100%, #f189b8));
-        background-image: -moz-linear-gradient(#e03a70, #f189b8);
-        background-image: -webkit-linear-gradient(#e03a70, #f189b8);
-        background-image: linear-gradient(#e03a70, #f189b8);
-        }
-        Updated version - 24th Nov 2014 */
-
         @import url(http://fonts.googleapis.com/css?family=Open+Sans);
         .btn { display: inline-block; *display: inline; *zoom: 1; padding: 4px 10px 4px; margin-bottom: 0; font-size: 13px; line-height: 18px; color: #333333; text-align: center;text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75); vertical-align: middle; background-color: #f5f5f5; background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6); background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6)); background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6); background-image: -o-linear-gradient(top, #ffffff, #e6e6e6); background-image: linear-gradient(top, #ffffff, #e6e6e6); background-repeat: repeat-x; filter: progid:dximagetransform.microsoft.gradient(startColorstr=#ffffff, endColorstr=#e6e6e6, GradientType=0); border-color: #e6e6e6 #e6e6e6 #e6e6e6; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); border: 1px solid #e6e6e6; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); cursor: pointer; *margin-left: .3em; }
         .btn:hover, .btn:active, .btn.active, .btn.disabled, .btn[disabled] { background-color: #e6e6e6; }
@@ -309,16 +42,12 @@
         	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
         }
         .filter {
-        	position: absolute;
-        	top: 25%;
-        	left: 15%;
-        	margin: -150px 0 0 -150px;
         	width:300px;
         	height:300px;
         }
-        .filter h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
+        h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
 
-        input {
+        input[type="text"] {
         	width: 100%;
         	margin-bottom: 10px;
         	background: rgba(0,0,0,0.3);
@@ -337,53 +66,274 @@
         	-ms-transition: box-shadow .5s ease;
         	transition: box-shadow .5s ease;
         }
-        input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
+        input[type="text"]:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
+
+        .output {
+          position: absolute;
+          top: 25%;
+          left: 45%;
+          margin: -150px 0 0 -150px;
+          width:800px;
+          height:300px;
+          color: #fff;
+        }
+
+        .wrapper{
+          width: 100%;
+          margin: 0 auto;
+        }
+
+        /* Reset */
+        @import url(//codepen.io/chrisdothtml/pen/ojLzJK.css);
+        .animate, .butn, .btn-border-o:before, .btn-border-o:after, .btn-border:before, .btn-border:after, .btn-border-rev-o:before, .btn-border-rev-o:after, .btn-border-rev:before, .btn-border-rev:after, .btn-fill-vert-o:before, .btn-fill-vert-o:after, .btn-fill-vert:before, .btn-fill-vert:after, .btn-fill-horz-o:before, .btn-fill-horz-o:after, .btn-fill-horz:before, .btn-fill-horz:after {
+          -webkit-transition: all 0.3s;
+          transition: all 0.3s;
+        }
+
+        /* Main Styles */
+        .main-container {
+          width: 100%;
+          max-width: 750px;
+          margin: 0 auto;
+        }
+
+        h1 {
+          line-height: 1;
+          border-bottom: 1px solid #2c3e50;
+          font-size: 35px;
+          color: #2c3e50;
+          text-align: center;
+        }
+
+        section {
+          padding: 5px 0 61px;
+          text-align: center;
+          position: relative;
+        }
+        section h2 {
+          margin-bottom: 15px;
+          font-weight: normal;
+          font-size: 17px;
+          color: #D2D2D2;
+          text-align: center;
+        }
+        section:not(:last-child):after {
+          content: '';
+          width: 70%;
+          height: 1px;
+          border-bottom: 1px dashed #2c3e50;
+          opacity: .5;
+          position: absolute;
+          bottom: -1px;
+          left: 15%;
+        }
+
+        .butn {
+          display: inline-block;
+          line-height: 35px;
+          margin: 8px;
+          padding: 0 15px;
+          font-size: 15px;
+          position: relative;
+          opacity: .999;
+          border-radius: 3px;
+        }
+
+        .btn-fill-home {
+          background-color: #2ecc71;
+          border: 1px solid #2ecc71;
+          color: #fff;
+          overflow: hidden;
+        }
+
+        .btn-fill-vert {
+          background-color: #e5e5e5;
+          border: 1px solid #e5e5e5;
+          color: #a6a6a6;
+          overflow: hidden;
+        }
+
+        .btn-fill-home:before, .btn-fill-home:after {
+          content: '';
+          width: 100%;
+          height: 0;
+          opacity: 0;
+          position: absolute;
+          left: 0;
+          z-index: -1;
+        }
+
+        .btn-fill-vert:before, .btn-fill-vert:after {
+          content: '';
+          width: 100%;
+          height: 0;
+          opacity: 0;
+          position: absolute;
+          left: 0;
+          z-index: -1;
+        }
+
+        .btn-fill-vert:before {
+          top: 50%;
+        }
+        .btn-fill-vert:after {
+          bottom: 50%;
+        }
+        .btn-fill-vert:hover {
+          color: #fff;
+        }
+        .btn-fill-vert:hover:before, .btn-fill-vert:hover:after {
+          height: 50%;
+          opacity: 1;
+        }
+
+        .btn-fill-home.btn-green:before, .btn-fill-home.btn-green:after {
+          background-color: #2ecc71;
+        }
+        .btn-fill-home.btn-green:hover {
+          border-color: #2ecc71;
+        }
+        .btn-fill-vert.btn-blue:before, .btn-fill-vert.btn-blue:after {
+          background-color: #3498db;
+        }
+        .btn-fill-vert.btn-blue:hover {
+          border-color: #3498db;
+        }
+        .btn-fill-vert.btn-purple:before, .btn-fill-vert.btn-purple:after {
+          background-color: #9b59b6;
+        }
+        .btn-fill-vert.btn-purple:hover {
+          border-color: #9b59b6;
+        }
+        .btn-fill-vert.btn-navy:before, .btn-fill-vert.btn-navy:after {
+          background-color: #34495e;
+        }
+        .btn-fill-vert.btn-navy:hover {
+          border-color: #34495e;
+        }
+        .btn-fill-vert.btn-orange:before, .btn-fill-vert.btn-orange:after {
+          background-color: #e67e22;
+        }
+        .btn-fill-vert.btn-orange:hover {
+          border-color: #e67e22;
+        }
+        .btn-fill-vert.btn-red:before, .btn-fill-vert.btn-red:after {
+          background-color: #e74c3c;
+        }
+        .btn-fill-vert.btn-red:hover {
+          border-color: #e74c3c;
+        }
 
 
+        /* menu base styles */
+
+        nav{
+          background: #3C3752;
+        }
+
+        nav ul{
+          list-style-type: none;
+          padding: 0;
+        }
+
+        nav li{
+          text-decoration: none;
+          text-align: center;
+          color: #fff;
+          display: block;
+        }
+
+        /* grid vs flex base styles */
+        #blocks{
+          margin: 20px;
+        }
+
+        article{
+          background: #fff;
+          margin-bottom: 20px;
+          padding: 10px;
+          box-sizing: border-box;
+        }
+
+        article h2{
+          text-align: center;
+          font-size: 20px;
+          margin: 10px;
+        }
+
+        /* flex styles */
+
+        nav ul.social li{
+          flex: 1 1 0;
+        }
+
+        nav ul.social{
+          flex: 1 1 0;
+          display: flex;
+        }
+
+        @media screen and (min-width: 500px){
+
+        nav ul{
+          display: flex;
+        }
+
+        nav li{
+          flex: 1 1 0;
+        }
+
+        nav{
+          display: flex;
+          justify-content: space-between;
+        }
+
+        ul.social{
+          margin: 0;
+        }
+
+        nav button{
+          justify-content: center;
+        }
+
+        #blocks{
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+        }
+
+        article{
+          flex: 0 1 32%;
+          transition: flex-basis 0.2s linear;
+        }
+
+        article.stack{
+          flex: 0 1 100%
+        }
+
+      } /* end media 768 */
     </style>
 
 </head>
 <body>
-  <!-- Nav
-  <section>
-    <div class="container">
-      <ul class="accordion">
-        <li class="tabs">
-          <div class="social-links twitter-icon">
-            <a href="http://twitter.com/renettarenula">Twitter</a>
-          </div>
-          <div class="paragraph">
-            <h1>Users</h1>
-            <p>Generate dummy users.</p>
-          </div>
-        </li>
-        <li class="tabs">
-          <div class="social-links facebook-icon">
-            <a href="http://facebook.com">Facebook</a>
-          </div>
-          <div class="paragraph">
-            <h1>Ipsum</h1>
-            <p>Generate ipsum text.</p>
-          </div>
-        </li>
-        <li class="tabs">
-          <div class="social-links linkedin-icon">
-             <a href="http://my.linkedin.com/pub/aysha-anggraini/49/a82/a05/">Password</a>
-          </div>
-          <div class="paragraph">
-            <h1>LinkedIn</h1>
-            <p>Generate an xkcd Password.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
-  Nav end-->
+  <div class="wrapper">
+    <section>
 
-  <section>
+      <nav>
+        <ul>
+          <li><button class="butn btn-green btn-fill-home">Home</button></li>
+          <li><button class="butn btn-blue btn-fill-vert">Ipsum</button></li>
+          <li><button class="butn btn-red btn-fill-vert">Users</button></li>
+          <li><button class="butn btn-orange btn-fill-vert">Passwords</button></li>
+        </ul>
+      </nav>
+    </section>
+
+    <section>
       {{-- Main page content will be yielded here --}}
       @yield('content')
-  </section>
+    </section>
+
+  </div>
 
   <footer>
   </footer>

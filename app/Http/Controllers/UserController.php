@@ -17,16 +17,24 @@ class UserController extends Controller
       * @return \Illuminate\Http\Response
       */
 
-   public function show() {
+   public function show(Request $request) {
 
-
-
+        $num_users= $request->input('num_users');
 
         $faker = \Faker\Factory::create();
         $users = [];
-        for ($i=1; $i<4; $i++) {
+        for ($i=1; $i<$num_users; $i++) {
           $name = $faker->name;
-          $users[$i]= $name;
+          $address = $faker->address;
+          $birthday = $faker->dateTimeThisCentury->format('Y-m-d');
+
+          $user = ''.$name.''.$address.' '.$birthday.'';
+
+          $users[$i]= $user;
+          $names = $names[$i];
+          $addresses = $address[$i];
+          $birthdays = $birthday[$i];
+
         }
 
         $usersErr = null;

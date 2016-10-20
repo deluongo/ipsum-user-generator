@@ -15,9 +15,21 @@ class IpsumController extends Controller
     * @return \Illuminate\Http\Response
     */
 
-   public function show()
+   public function show(Request $request)
    {
-       return view('ipsum.show');
 
-   }
+       $this->validate($request, [
+         'num_par' => 'required|min:1|max:99|alpha_num',
+       ]);
+
+      $num_par= $request->input('num_par');
+      $faker = \Faker\Factory::create();
+
+
+      $ipsum = $faker->paragraphs($nb = $num_par, $asText = true);
+
+      return view('ipsum.show')->compact(['ipsum' => $ipsum]);
+
+
+    }
 }

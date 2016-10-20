@@ -20,14 +20,6 @@ Route::get('/', function () {
 */
 # Ipsum landing page, display form
 Route::get('/ipsums', 'IpsumController@show')->name('ipsum.show');
-# Process form to return ipsum text
-Route::post('/ipsums', 'IpsumController@store')->name('ipsum.store');
-# Display ipsum text --?? Should these all reference the same page??--
-Route::get('/ipsums/{label}', 'IpsumController@show')->name('ipsums.show');
-# Process form to display ipsum text
-Route::put('/ipsums/{label}', 'IpsumController@update')->name('ipsums.update');
-# The above routes *could* all be replaced with this one line:
-# Route::resource('books', 'BookController');
 
 
 /**
@@ -37,11 +29,6 @@ Route::put('/ipsums/{label}', 'IpsumController@update')->name('ipsums.update');
 Route::get('/users', 'UserController@show')->name('user.show');
 
 # Display ipsum text --?? Should these all reference the same page??--
-
-# Process form to display ipsum text
-Route::put('/users/{name}', 'UserController@update')->name('user.update');
-# The above routes *could* all be replaced with this one line:
-# Route::resource('books', 'BookController');
 
 /**
 * Password resources

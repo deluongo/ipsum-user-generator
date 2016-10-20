@@ -2,14 +2,15 @@
 
 @section('title')
   Generate Ipsum Text
-@stop
+@endsection
 
-@section('head')
+@section('content')
 
   <div class="flex-container">
     <div class="flex-item one">
         <h1>Ipsum Filters</h1>
-          <form method="get" action="\ipsums">
+          <form method="post" action="\ipsums">
+            {{ csrf_field() }}
             <input type="text" name="num_par" label="num_par" placeholder="How many paragraphs? (Max: 99)" required="required" />
             @if(count($errors) > 0)
               <ul>
@@ -17,7 +18,9 @@
                 <li>
                   {{ $error }}
                 </li>
+                @endforeach
               </ul>
+            @endif
             <button type="submit" class="btn btn-primary btn-block btn-large">Generate Text</button>
           </form>
     </div>
@@ -30,5 +33,3 @@
     </div>
   </div>
 @endsection
-
-@section('content')

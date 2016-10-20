@@ -20,7 +20,7 @@ Route::get('/', function () {
 */
 # Ipsum landing page, display form
 Route::get('/ipsums', 'IpsumController@show')->name('ipsum.show');
-
+Route::post('/ipsums', 'IpsumController@post')->name('ipsum.show');
 
 /**
 * User resources

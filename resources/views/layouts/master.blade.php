@@ -191,14 +191,17 @@
           background-color: #2ecc71;
         }
         .btn-fill-home.btn-green:hover {
+          background-color: #2ecD99;
           border-color: #2ecc71;
         }
+
         .btn-fill-vert.btn-blue:before, .btn-fill-vert.btn-blue:after {
           background-color: #3498db;
         }
         .btn-fill-vert.btn-blue:hover {
           border-color: #3498db;
         }
+
         .btn-fill-vert.btn-purple:before, .btn-fill-vert.btn-purple:after {
           background-color: #9b59b6;
         }
@@ -309,6 +312,11 @@
         article.stack{
           flex: 0 1 100%
         }
+        /* Main Styles */
+        .flex-container {
+          display: flex;
+        }
+
 
       } /* end media 768 */
     </style>
@@ -317,7 +325,6 @@
 <body>
   <div class="wrapper">
     <section>
-
       <nav>
         <ul>
           <li><button class="butn btn-green btn-fill-home">Home</button></li>

@@ -41,10 +41,7 @@
         	background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg,  #670d10 0%,#092756 100%);
         	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
         }
-        .filter {
-        	width:300px;
-        	height:300px;
-        }
+
         h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
 
         input[type="text"] {
@@ -78,54 +75,13 @@
           color: #fff;
         }
 
-        .wrapper{
-          width: 100%;
-          margin: 0 auto;
-        }
+
 
         /* Reset */
         @import url(//codepen.io/chrisdothtml/pen/ojLzJK.css);
         .animate, .butn, .btn-border-o:before, .btn-border-o:after, .btn-border:before, .btn-border:after, .btn-border-rev-o:before, .btn-border-rev-o:after, .btn-border-rev:before, .btn-border-rev:after, .btn-fill-vert-o:before, .btn-fill-vert-o:after, .btn-fill-vert:before, .btn-fill-vert:after, .btn-fill-horz-o:before, .btn-fill-horz-o:after, .btn-fill-horz:before, .btn-fill-horz:after {
           -webkit-transition: all 0.3s;
           transition: all 0.3s;
-        }
-
-        /* Main Styles */
-        .main-container {
-          width: 100%;
-          max-width: 750px;
-          margin: 0 auto;
-        }
-
-        h1 {
-          line-height: 1;
-          border-bottom: 1px solid #2c3e50;
-          font-size: 35px;
-          color: #2c3e50;
-          text-align: center;
-        }
-
-        section {
-          padding: 5px 0 61px;
-          text-align: center;
-          position: relative;
-        }
-        section h2 {
-          margin-bottom: 15px;
-          font-weight: normal;
-          font-size: 17px;
-          color: #D2D2D2;
-          text-align: center;
-        }
-        section:not(:last-child):after {
-          content: '';
-          width: 70%;
-          height: 1px;
-          border-bottom: 1px dashed #2c3e50;
-          opacity: .5;
-          position: absolute;
-          bottom: -1px;
-          left: 15%;
         }
 
         .butn {
@@ -227,7 +183,6 @@
           border-color: #e74c3c;
         }
 
-
         /* menu base styles */
 
         nav{
@@ -246,35 +201,6 @@
           display: block;
         }
 
-        /* grid vs flex base styles */
-        #blocks{
-          margin: 20px;
-        }
-
-        article{
-          background: #fff;
-          margin-bottom: 20px;
-          padding: 10px;
-          box-sizing: border-box;
-        }
-
-        article h2{
-          text-align: center;
-          font-size: 20px;
-          margin: 10px;
-        }
-
-        /* flex styles */
-
-        nav ul.social li{
-          flex: 1 1 0;
-        }
-
-        nav ul.social{
-          flex: 1 1 0;
-          display: flex;
-        }
-
         @media screen and (min-width: 500px){
 
         nav ul{
@@ -290,28 +216,10 @@
           justify-content: space-between;
         }
 
-        ul.social{
-          margin: 0;
-        }
-
         nav button{
           justify-content: center;
         }
 
-        #blocks{
-          display: flex;
-          justify-content: space-between;
-          flex-wrap: wrap;
-        }
-
-        article{
-          flex: 0 1 32%;
-          transition: flex-basis 0.2s linear;
-        }
-
-        article.stack{
-          flex: 0 1 100%
-        }
         /* Main Styles */
         .flex-container {
           display: flex;
@@ -341,27 +249,22 @@
 
 </head>
 <body>
-  <div class="wrapper">
-    <section>
-      <nav>
-        <ul>
-          <li><button class="butn btn-green btn-fill-home">Home</button></li>
-          <li><button class="butn btn-blue btn-fill-vert">Ipsum</button></li>
-          <li><button class="butn btn-red btn-fill-vert">Users</button></li>
-          <li><button class="butn btn-orange btn-fill-vert">Passwords</button></li>
-        </ul>
-      </nav>
-    </section>
 
-    <section>
-      {{-- Main page content will be yielded here --}}
-      @yield('content')
-    </section>
+  <section>
+    <nav>
+      <ul>
+        <li><a href="/"><button class="butn btn-green btn-fill-home">Home</button></a></li>
+        <li><a href="/ipsums"><button class="butn btn-blue btn-fill-vert">Ipsum</button></a></li>
+        <li><a href="/users"><button class="butn btn-red btn-fill-vert">Users</button></a></li>
+        <li><a href="/passwords"><button class="butn btn-orange btn-fill-vert">Passwords</button></a></li>
+      </ul>
+    </nav>
+  </section>
 
-  </div>
-
-  <footer>
-  </footer>
+  <section>
+    {{-- Main page content will be yielded here --}}
+    @yield('content')
+  </section>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 

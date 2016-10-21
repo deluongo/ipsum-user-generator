@@ -35,7 +35,7 @@ Route::get('/users', 'UserController@show')->name('user.show');
 */
 # Ipsum landing page, display form
 Route::get('/passwords', 'PasswordController@show')->name('password.show');
-Route::post('/passwords', 'PasswordController@show')->name('password.show');
+Route::post('/passwords', 'PasswordController@post')->name('password.show');
 /**
 * Prctice resources
 */

@@ -29,17 +29,16 @@
                   <br/>
                   <!--Add a Number | Checkbox-->
                   <label for="number"> Add a Number</label>
-                  <input type="checkbox" name="number" id="number" value="yes" "{{ $number_status }}" >
+                  <input type="checkbox" name="number" id="number" value="yes" {{ $number_status }} >
                   <br/>
                   <!--Add a Symbol | Checkbox-->
                   <label for="symbol"> Add a Symbol&nbsp </label>
-                  <input type="checkbox" name="symbol" id="symbol" value="yes" "{{ $link_status }}">
+                  <input type="checkbox" name="symbol" id="symbol" value="yes" {{ $link_status }} >
                   <br/>
                   <!--Capitalize | Check Box-->
+                  <input class="btn btn-primary btn-block btn-space" type="submit" name="submit" value="Generate New Password" />
               </fieldset>
           </div>
-          <br>
-          <input class="btn btn-primary btn-block btn-large" type="submit" name="submit" value="Generate New Password" />
       </form>
     </div>
     <div class="flex-item two">

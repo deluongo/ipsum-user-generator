@@ -18,8 +18,8 @@ class IpsumController extends Controller
 
     public function show()
     {
-      $ipsum = null;
-       return view('ipsum.show')->with(['ipsum' => $ipsum]);
+      $ipsums = null;
+       return view('ipsum.show')->with(['ipsums' => $ipsums]);
 
      }
 
@@ -36,9 +36,9 @@ class IpsumController extends Controller
       $faker = \Faker\Factory::create();
 
 
-      $ipsum = $faker->paragraphs($nb = $num_par, $asText = true);
+      $ipsums = $faker->paragraphs($nb = $num_par, $asText = false);
 
-      return view('ipsum.show')->with(['ipsum' => $ipsum]);
+      return view('ipsum.show')->with(['ipsums' => $ipsums]);
 
 
     }

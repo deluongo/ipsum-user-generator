@@ -109,7 +109,10 @@ class PasswordController extends Controller
             array_push($password_array, $password);
         }
 
-        $data = ['password_array' => $password_array, 'num_words' => $num_words, 'link' => $link, 'number' => $number, 'symbol' => $symbol, 'wordsErr' => $wordsErr];
+        $number_status = '';
+        $link_status = '';
+
+        $data = ['password_array' => $password_array, 'num_words' => $num_words, 'link' => $link, 'number' => $number, 'symbol' => $symbol, 'wordsErr' => $wordsErr, 'number_status' => $number_status, 'link_status' => $link_status];
         return view('password.show')->with($data);
        }
 
@@ -127,8 +130,6 @@ class PasswordController extends Controller
         $link = $request->input('link');
         $symbol = $request->input('symbol');
         $number = $request->input('number');
-
-        echo $num_words;
 
         if ($symbol != 'yes') {
             $symbol = 'no';
@@ -223,13 +224,20 @@ class PasswordController extends Controller
             array_push($password_array, $password);
         }
 
-        if ($link == 'yes') {
+        if ($symbol== 'yes') {
           $link_status = 'checked';
+        }
+        else {
+          $link_status = '';
         }
 
         if ($number == 'yes') {
           $number_status = 'checked';
         }
+        else {
+          $number_status = '';
+        }
+
 
         $data = ['password_array' => $password_array, 'num_words' => $num_words, 'link' => $link, 'number' => $number, 'symbol' => $symbol, 'wordsErr' => $wordsErr, 'number_status' => $number_status, 'link_status' => $link_status];
         return view('password.show')->with($data);

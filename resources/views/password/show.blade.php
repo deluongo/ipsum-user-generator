@@ -29,11 +29,11 @@
                   <br/>
                   <!--Add a Number | Checkbox-->
                   <label for="number"> Add a Number</label>
-                  <input type="checkbox" name="number" id="number" value="yes" {{ $number_status }} >
+                  <input type="checkbox" name="number" id="number" value="yes" "{{ $number_status }}" >
                   <br/>
                   <!--Add a Symbol | Checkbox-->
                   <label for="symbol"> Add a Symbol&nbsp </label>
-                  <input type="checkbox" name="symbol" id="symbol" value="yes" {{ $link_status }}>
+                  <input type="checkbox" name="symbol" id="symbol" value="yes" "{{ $link_status }}">
                   <br/>
                   <!--Capitalize | Check Box-->
               </fieldset>

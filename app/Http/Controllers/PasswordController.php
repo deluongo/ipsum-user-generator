@@ -231,7 +231,7 @@ class PasswordController extends Controller
           $number_status = 'checked';
         }
 
-        $data = ['number_status' => $number_status, 'link_status' => $link_status, 'password_array' => $password_array, 'num_words' => $num_words, 'link' => $link, 'number' => $number, 'symbol' => $symbol, 'wordsErr' => $wordsErr];
+        $data = ['password_array' => $password_array, 'num_words' => $num_words, 'link' => $link, 'number' => $number, 'symbol' => $symbol, 'wordsErr' => $wordsErr, 'number_status' => $number_status, 'link_status' => $link_status];
         return view('password.show')->with($data);
     }
   }

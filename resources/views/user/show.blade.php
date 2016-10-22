@@ -18,8 +18,12 @@
         <fieldset>
           <legend>Custom Settings</legend>
           <input type="text" name="num_users" placeholder="How many users? (Max: 99)" value="{{ $num_users }}" required="required" />
-          <input type="checkbox" name="address" value="yes" {{$address_status}}/>		<label for="address">Address</label>		<br>
-          <input type="checkbox" name="birthday" value="yes" {{$birthday_status}}/>		<label for="birthday">Birthdate</label>		<br>
+          <input type="checkbox" name="address" id="address" value="yes" {{$address_status}}>
+          <label for="address">Address</label>
+          <br>
+          <input type="checkbox" name="birthday" id="birthday" value="yes" {{$birthday_status}}>
+          <label for="birthday">Birthdate</label>
+          <br>
           <input type="submit" name="submit" class="btn btn-primary btn-block btn-space" value="Generate Fake Users" />
         </fieldset>
       </form>

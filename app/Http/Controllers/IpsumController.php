@@ -19,7 +19,8 @@ class IpsumController extends Controller
     public function show()
     {
       $ipsums = null;
-       return view('ipsum.show')->with(['ipsums' => $ipsums]);
+      $num_par = null;
+      return view('ipsum.show')->with(['ipsums' => $ipsums, 'num_par' => $num_par]);
 
      }
 
@@ -38,7 +39,7 @@ class IpsumController extends Controller
 
       $ipsums = $faker->paragraphs($nb = $num_par, $asText = false);
 
-      return view('ipsum.show')->with(['ipsums' => $ipsums]);
+      return view('ipsum.show')->with(['ipsums' => $ipsums, 'num_par' => $num_par]);
 
 
     }

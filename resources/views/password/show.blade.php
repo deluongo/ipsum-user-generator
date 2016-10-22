@@ -19,21 +19,22 @@
               <fieldset>
                   <legend>Custom Settings</legend>
                   <!--Number of Words | Text Box-->
-                  <label for="num_words"><span># of Words &nbsp &nbsp</span></label>
+                  <label for="num_words"><span># of Words</span></label>
                   <input type="text" name="num_words" id="num_words" value="{{ $num_words }}" size=1 placeholder="4" autofocus>
                   <span class="error">{{$wordsErr}}</span>
                   <br/>
                   <!--Separator | Text Box-->
-                  <label for="link"><span>Separator &nbsp &nbsp</span></label>
+                  <label for="link"><span>Separator</span></label>
                   <input type="text" name="link" id="link" value="{{ $link }}" size=3 placeholder="-">
                   <br/>
                   <!--Add a Number | Checkbox-->
-                  <label for="number"> Add a Number</label>
+
                   <input type="checkbox" name="number" id="number" value="yes" {{ $number_status }} >
+                  <label for="number"> Add a Number </label>
                   <br/>
                   <!--Add a Symbol | Checkbox-->
-                  <label for="symbol"> Add a Symbol&nbsp </label>
                   <input type="checkbox" name="symbol" id="symbol" value="yes" {{ $link_status }} >
+                  <label for="symbol"> Add a Symbol </label>
                   <br/>
                   <!--Capitalize | Check Box-->
                   <input class="btn btn-primary btn-block btn-space" type="submit" name="submit" value="Generate New Password" />

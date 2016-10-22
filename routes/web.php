@@ -27,7 +27,7 @@ Route::post('/ipsums', 'IpsumController@post')->name('ipsum.show');
 */
 # Ipsum landing page, display form
 Route::get('/users', 'UserController@show')->name('user.show');
-
+Route::post('/users', 'UserController@post')->name('user.show');
 # Display ipsum text --?? Should these all reference the same page??--
 
 /**

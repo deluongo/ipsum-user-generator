@@ -198,6 +198,7 @@
           background: #c9c9c9;
           padding: 8px;
           box-shadow: 0 0 15px 2px rgba(0,0,0,0.5);
+          height: 57px;
         }
 
         nav ul{
@@ -205,7 +206,6 @@
           -webkit-padding-start: 0px;
           -webkit-margin-before: 0em;
           -webkit-margin-after: 0em;
-
         }
 
         nav li{
@@ -217,7 +217,7 @@
         }
 
         a {
-          padding: 0;
+          text-decoration: none;
         }
 
         fieldset {
@@ -308,10 +308,10 @@
   <section>
     <nav>
       <ul>
-        <li><a href="/"><button class="butn btn-green btn-fill-home">Home</button></a></li>
-        <li><a href="/ipsums"><button class="butn btn-blue btn-fill-vert">Ipsum</button></a></li>
-        <li><a href="/users"><button class="butn btn-blue btn-fill-vert">Users</button></a></li>
-        <li><a href="/passwords"><button class="butn btn-blue btn-fill-vert">Passwords</button></a></li>
+        <li><a href="/" class="butn btn-green btn-fill-home">Home</a></li>
+        <li><a href="/ipsums" class="butn btn-blue btn-fill-vert">Ipsum</a></li>
+        <li><a href="/users" class="butn btn-blue btn-fill-vert">Users</a></li>
+        <li><a href="/passwords" class="butn btn-blue btn-fill-vert">Passwords</a></li>
       </ul>
     </nav>
   </section>

@@ -10,9 +10,9 @@
     <div class="flex-item one">
       <fieldset>
         <legend>Ipsum Filters</legend>
-          <form method="post" action="\ipsums">
+          <form method="post" action="/ipsums">
             {{ csrf_field() }}
-            <input type="text" name="num_par" label="num_par" value = "{{$num_par}}" placeholder="How many paragraphs? (Max: 99)" required="required" />
+            <input type="text" name="num_par" value = "{{$num_par}}" placeholder="How many paragraphs? (Max: 99)" required="required" />
             @if(count($errors) > 0)
               <ul>
                 @foreach($errors->all() as $error)

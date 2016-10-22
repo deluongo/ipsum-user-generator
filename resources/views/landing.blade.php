@@ -24,7 +24,7 @@
           <h2 class="c-hero-flex__title">Dummy User</h2>
         </a>
         <a class="c-hero-flex__item" href="/passwords">
-          <h2 class="c-hero-flex__title">&nbspPassword&nbsp</h2>
+          <h2 class="c-hero-flex__title">&nbsp;Password&nbsp;</h2>
         </a>
       </section>
     </body>

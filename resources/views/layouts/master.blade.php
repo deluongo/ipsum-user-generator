@@ -16,18 +16,18 @@
 
 </head>
 <body>
-
-  <section>
-    <nav>
-      <ul>
-        <li><a href="/" class="butn btn-green btn-fill-home">Home</a></li>
-        <li><a href="/ipsums" class="butn btn-blue btn-fill-vert">Ipsum</a></li>
-        <li><a href="/users" class="butn btn-blue btn-fill-vert">Users</a></li>
-        <li><a href="/passwords" class="butn btn-blue btn-fill-vert">Passwords</a></li>
-      </ul>
-    </nav>
-  </section>
   <div class="scroll_wrapper">
+    <section class="navigation">
+      <nav>
+        <ul>
+          <li><a href="/" class="butn btn-green btn-fill-home">Home</a></li>
+          <li><a href="/ipsums" class="butn btn-blue btn-fill-vert">Ipsum</a></li>
+          <li><a href="/users" class="butn btn-blue btn-fill-vert">Users</a></li>
+          <li><a href="/passwords" class="butn btn-blue btn-fill-vert">Passwords</a></li>
+        </ul>
+      </nav>
+    </section>
+
     <section>
       {{-- Main page content will be yielded here --}}
       @yield('content')
@@ -38,6 +38,5 @@
     {{-- Yield any page specific JS files or anything else you might want at the end of the body --}}
     @yield('body')
   </div>
-
 </body>
 </html>

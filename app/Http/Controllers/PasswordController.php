@@ -19,8 +19,8 @@ class PasswordController extends Controller
       public function show()
       {
         $wordsErr = '';
-        $num_words = 4;
-        $link = '-';
+        $number_of_words = null;
+        $link = null;
         $symbol = 'no';
         $number = 'no';
 
@@ -70,10 +70,10 @@ class PasswordController extends Controller
         for ($a = 0; $a < 5; $a++) {
             $password = '';
             //Select a random words
-            for ($i = 1; $i <= $num_words; $i++) {
+            for ($i = 1; $i <= 4; $i++) {
                 $word_index = rand(0, count($array_words));
                 $word = (string)$array_words[$word_index];
-                $password = $password.$word.$link;
+                $password = $password.$word.'-';
             }
             //Add number
             if ($number == 'yes') {
@@ -110,23 +110,23 @@ class PasswordController extends Controller
         }
 
         $number_status = '';
-        $link_status = '';
+        $symbol_status = '';
 
-        $data = ['password_array' => $password_array, 'num_words' => $num_words, 'link' => $link, 'number' => $number, 'symbol' => $symbol, 'wordsErr' => $wordsErr, 'number_status' => $number_status, 'link_status' => $link_status];
+        $data = ['password_array' => $password_array, 'number_of_words' => $number_of_words, 'link' => $link, 'number' => $number, 'symbol' => $symbol, 'wordsErr' => $wordsErr, 'number_status' => $number_status, 'symbol_status' => $symbol_status];
         return view('password.show')->with($data);
        }
 
       public function post(Request $request)
       {
         $this->validate($request, [
-            'num_words' => 'required|min:1|max:25|numeric',
-            'symbol' =>  '',
-            'number' => ''
+            'number_of_words' => 'required|min:1|max:25|numeric',
+            'link' => 'regex:/[^~`^<>]+/',
+
         ]);
 
         //Set default password values
         $wordsErr = '';
-        $num_words = $request->input('num_words');
+        $number_of_words = $request->input('number_of_words');
         $link = $request->input('link');
         $symbol = $request->input('symbol');
         $number = $request->input('number');
@@ -185,7 +185,7 @@ class PasswordController extends Controller
         for ($a = 0; $a < 5; $a++) {
             $password = '';
             //Select a random words
-            for ($i = 1; $i <= $num_words; $i++) {
+            for ($i = 1; $i <= $number_of_words; $i++) {
                 $word_index = rand(0, count($array_words));
                 $word = (string)$array_words[$word_index];
                 $password = $password.$word.$link;
@@ -225,10 +225,10 @@ class PasswordController extends Controller
         }
 
         if ($symbol== 'yes') {
-          $link_status = 'checked';
+          $symbol_status = 'checked';
         }
         else {
-          $link_status = '';
+          $symbol_status = '';
         }
 
         if ($number == 'yes') {
@@ -239,7 +239,7 @@ class PasswordController extends Controller
         }
 
 
-        $data = ['password_array' => $password_array, 'num_words' => $num_words, 'link' => $link, 'number' => $number, 'symbol' => $symbol, 'wordsErr' => $wordsErr, 'number_status' => $number_status, 'link_status' => $link_status];
+        $data = ['password_array' => $password_array, 'number_of_words' => $number_of_words, 'link' => $link, 'number' => $number, 'symbol' => $symbol, 'wordsErr' => $wordsErr, 'number_status' => $number_status, 'symbol_status' => $symbol_status];
         return view('password.show')->with($data);
     }
   }

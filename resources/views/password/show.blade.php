@@ -15,31 +15,54 @@
     <div class="flex-item one">
       <form method="post" action="/passwords">
         {{ csrf_field() }}
-          <div>
-              <fieldset>
-                  <legend>Custom Settings</legend>
-                  <!--Number of Words | Text Box-->
-                  <label for="num_words"><span># of Words</span></label>
-                  <input type="text" name="num_words" id="num_words" value="{{ $num_words }}" size=1 placeholder="4" autofocus>
-                  <span class="error">{{$wordsErr}}</span>
-                  <br/>
-                  <!--Separator | Text Box-->
-                  <label for="link"><span>Separator</span></label>
-                  <input type="text" name="link" id="link" value="{{ $link }}" size=3 placeholder="-">
-                  <br/>
-                  <!--Add a Number | Checkbox-->
-
-                  <input type="checkbox" name="number" id="number" value="yes" {{ $number_status }} >
-                  <label for="number"> Add a Number </label>
-                  <br/>
+            <fieldset>
+                <legend>Custom Settings</legend>
+                <!--Number of Words | Text Box-->
+                <label for="number_of_words"><span># of Words</span></label>
+                <input type="text" name="number_of_words" id="num_words" value="{{old('number_of_words', $number_of_words)}}" size=1 placeholder="How many words? (Max: 25)" autofocus>
+                @if($errors->get('number_of_words'))
+                  <ul class="errors">
+                  @foreach($errors->get('number_of_words') as $error)
+                    <li>{{ $error }}</li>
+                  @endforeach
+                  </ul>
+                @endif
+                <!--Separator | Text Box-->
+                <label for="link"><span>Separator</span></label>
+                <input type="text" name="link" id="link" value="{{old('link', $link)}}" size=3 placeholder="Which separator?">
+                @if($errors->get('link'))
+                  <ul class="errors">
+                  @foreach($errors->get('link') as $error)
+                    <li>{{ $error }}</li>
+                  @endforeach
+                  </ul>
+                @endif
+                <br/>
+                <!--Add a Number | Checkbox-->
+                <div id="password_toggle">
+                  <div>
+                    <span> Add a Number </span>
+                    <br />
+                    <div class="toggle toggle--on-off">
+                      <input type="checkbox" name="number" class="toggle__input" value="yes" {{ $number_status }} >
+                      <label data-on="ON" data-off="OFF" class="toggle__label"></label>
+                    </div>
+                    <br/>
+                  </div>
                   <!--Add a Symbol | Checkbox-->
-                  <input type="checkbox" name="symbol" id="symbol" value="yes" {{ $link_status }} >
-                  <label for="symbol"> Add a Symbol </label>
-                  <br/>
-                  <!--Capitalize | Check Box-->
-                  <input class="btn btn-primary btn-block btn-space" type="submit" name="submit" value="Generate New Password" />
-              </fieldset>
-          </div>
+                  <div>
+                    <span> Add a Symbol </span>
+                    <br />
+                    <div class="toggle toggle--on-off">
+                      <input type="checkbox" name="symbol" class="toggle__input" value="yes" {{ $symbol_status }} >
+                      <label data-on="ON" data-off="OFF" class="toggle__label"></label>
+                    </div>
+                    <br/>
+                  </div>
+                </div>
+                <!--Capitalize | Check Box-->
+                <input class="btn btn-primary btn-block btn-space" type="submit" name="submit" value="Generate New Password" />
+            </fieldset>
       </form>
     </div>
     <div class="flex-item two">

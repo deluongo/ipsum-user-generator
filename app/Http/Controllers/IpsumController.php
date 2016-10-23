@@ -14,32 +14,48 @@ class IpsumController extends Controller
     * @param  int  $title
     * @return \Illuminate\Http\Response
     */
-
-
     public function show()
     {
       $ipsums = null;
-      $num_par = null;
-      return view('ipsum.show')->with(['ipsums' => $ipsums, 'num_par' => $num_par]);
+      $number_of_paragraphs = null;
+      $sentences_per_paragraph = null;
 
+      $faker = \Faker\Factory::create();
+
+      $ipsums = new \ArrayObject();
+      for ($i=0; $i<1; $i++) {
+        $paragraph = $faker->paragraph($nbSentences = 4, $variableNbSentences = true);
+        $ipsums->append($paragraph);
+      }
+
+      return view('ipsum.show')->with(['ipsums' => $ipsums, 'number_of_paragraphs' => $number_of_paragraphs, 'sentences_per_paragraph' => $sentences_per_paragraph]);
      }
 
+   /**
+     * Process form submission
+     *
+     * @param  int  $title
+     * @return \Illuminate\Http\Response
+     */
    public function post(Request $request)
    {
 
-
        $this->validate($request, [
-           'num_par' => 'required|min:1|max:99|alpha_num',
+           'number_of_paragraphs' => 'required|min:1|max:99|numeric',
+           'sentences_per_paragraph' => 'required|min:1|max:99|numeric'
        ]);
 
-
-      $num_par= $request->input('num_par');
+      $number_of_paragraphs = $request->input('number_of_paragraphs');
+      $sentences_per_paragraph = $request->input('sentences_per_paragraph');
       $faker = \Faker\Factory::create();
 
+      $ipsums = new \ArrayObject();
+      for ($i=0; $i<$number_of_paragraphs; $i++) {
+        $paragraph = $faker->paragraph($nbSentences = $sentences_per_paragraph, $variableNbSentences = false);
+        $ipsums->append($paragraph);
+      }
 
-      $ipsums = $faker->paragraphs($nb = $num_par, $asText = false);
-
-      return view('ipsum.show')->with(['ipsums' => $ipsums, 'num_par' => $num_par]);
+      return view('ipsum.show')->with(['ipsums' => $ipsums, 'number_of_paragraphs' => $number_of_paragraphs, 'sentences_per_paragraph' => $sentences_per_paragraph]);
 
 
     }

@@ -18,8 +18,15 @@
         <fieldset>
           <legend>Custom Settings</legend>
           <!--Number of users -->
-          <label for="num_users"><span># of Users</span></label>
-          <input type="text" name="num_users" placeholder="How many users? (Max: 99)" value="{{ $num_users }}" required="required" />
+          <label for="number_of_users"><span># of Users</span></label>
+          <input type="text" name="number_of_users" placeholder="How many users? (Max: 99)" value="{{ $number_of_users }}" required="required" />
+          @if($errors->get('number_of_users'))
+            <ul class="errors">
+            @foreach($errors->get('number_of_users') as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+            </ul>
+          @endif
           <!--User Fields -->
           <!--Output Format-->
           <div class="format_toggle">

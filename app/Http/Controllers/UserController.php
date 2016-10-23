@@ -21,7 +21,7 @@ class UserController extends Controller
       public function show() {
 
         //Set default values for user inputs
-        $num_users= null;
+        $number_of_users = null;
         $users = new \ArrayObject();
         $faker = \Faker\Factory::create();
 
@@ -55,7 +55,7 @@ class UserController extends Controller
         $all_users_json = null;
 
         //Pass variables to views
-        $data = ['format_status' => $format_status, 'format' => $format, 'users' => $users, 'usersErr' => $usersErr, 'num_elements' => $num_elements, 'address_status' => $address_status, 'birthday_status' => $birthday_status, 'company_status' => $company_status, 'all_users_json' => $all_users_json, 'num_users' => $num_users];
+        $data = ['format_status' => $format_status, 'format' => $format, 'users' => $users, 'usersErr' => $usersErr, 'num_elements' => $num_elements, 'address_status' => $address_status, 'birthday_status' => $birthday_status, 'company_status' => $company_status, 'all_users_json' => $all_users_json, 'number_of_users' => $number_of_users];
 
         return view('user.show')->with($data);
    }
@@ -64,7 +64,7 @@ class UserController extends Controller
    public function post(Request $request) {
 
      //Assign form values to variables
-     $num_users = $request->input('num_users');
+     $number_of_users = $request->input('number_of_users');
      $include_address = $request->input('address');
      $include_birthday = $request->input('birthday');
      $format = 'readable';
@@ -94,7 +94,7 @@ class UserController extends Controller
 
      $input_names = array('company');
 
-     for ($i=0; $i<$num_users; $i++) {
+     for ($i=0; $i<$number_of_users; $i++) {
        $contact_arr = new \ArrayObject();
        //Generate name
        $name = $faker->name;
@@ -132,7 +132,7 @@ class UserController extends Controller
      $all_users_obj["user_list"] = $all_users_arr;
      $all_users_json = json_encode($all_users_obj, JSON_PRETTY_PRINT);
      $usersErr = null;
-     $data = ['format_status' => $format_status, 'format' => $format, 'users' => $users, 'usersErr' => $usersErr, 'num_elements' => $num_elements, 'address_status' => $address_status, 'birthday_status' => $birthday_status, 'company_status' => $company_status, 'all_users_json' => $all_users_json, 'num_users' => $num_users];
+     $data = ['format_status' => $format_status, 'format' => $format, 'users' => $users, 'usersErr' => $usersErr, 'num_elements' => $num_elements, 'address_status' => $address_status, 'birthday_status' => $birthday_status, 'company_status' => $company_status, 'all_users_json' => $all_users_json, 'number_of_users' => $number_of_users];
 
      return view('user.show')->with($data);
    }

@@ -6,22 +6,24 @@
 [![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
 [![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+Live URL: http://p3.kidcoder.me/
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+Description: This site contains a lorem ipsum generator, dummy user generator, and an xkcd 
+password generator. Lorem Ipsum takes in the number of paragraphs and number of sentences 
+per paragraph an returns lorem ipsum text of the specified length. The dummy user 
+generator allows users to choose which contact fields will be included, the number of 
+users, and the option to output plain text on a JSON object. The password generator creates 
+5 passwords for the user to choose from. The user also has the option to choose from 4 
+inputs to generate a custom password. They can determine the number of words, 
+the character that links each word, and add a symbol and/or a number to the end of the 
+password. 
 
-## Official Documentation
+Screencast Demo: COMING SOON!
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+Note: 100% of the HTML and 80% of the CSS was written by me. I did leverage some codepens
+for design inspiration. I also kept the DOM Parser from P2. The original code can be found 
+here:  
 
-## Contributing
+http://stackoverflow.com/questions/14329892/web-scrape-using-preg-match-all
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+Plugins/Libraries: Faker: https://github.com/fzaninotto/Faker.

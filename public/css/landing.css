@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800');
+
 body {
-    font-family: 'Rubik', 'Segoe UI', 'San Francisco', 'Calibri', Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: 5px;
+    font-family: 'Raleway', 'Rubik', 'Segoe UI', 'San Francisco', 'Calibri', Arial, sans-serif;
     margin: 0;
 }
 

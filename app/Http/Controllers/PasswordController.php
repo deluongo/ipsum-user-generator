@@ -67,11 +67,12 @@ class PasswordController extends Controller
 
         //Generate 5 passwords and store in an array
         $password_array = array();
+        $num_array_words = count($array_words) - 1;
         for ($a = 0; $a < 5; $a++) {
             $password = '';
             //Select a random words
             for ($i = 1; $i <= 4; $i++) {
-                $word_index = rand(0, count($array_words)-1);
+                $word_index = rand(0, $num_array_words);
                 $word = (string)$array_words[$word_index];
                 $password = $password.$word.'-';
             }
@@ -182,11 +183,12 @@ class PasswordController extends Controller
 
         //Generate 5 passwords and store in an array
         $password_array = array();
+        $num_array_words = count($array_words) - 1;
         for ($a = 0; $a < 5; $a++) {
             $password = '';
             //Select a random words
             for ($i = 1; $i <= $number_of_words; $i++) {
-                $word_index = rand(0, count($array_words-1));
+                $word_index = rand(0, $num_array_words);
                 $word = (string)$array_words[$word_index];
                 $password = $password.$word.$link;
             }

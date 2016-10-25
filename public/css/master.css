@@ -32,7 +32,6 @@ body {
     background: -o-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), -o-linear-gradient(top, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), -o-linear-gradient(-45deg, #670d10 0%, #092756 100%);
     background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), -ms-linear-gradient(top, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), -ms-linear-gradient(-45deg, #670d10 0%, #092756 100%);
     background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), linear-gradient(to bottom, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), linear-gradient(135deg, #670d10 0%, #092756 100%);
-
 }
 
 h1 {
@@ -44,6 +43,7 @@ h1 {
     margin-bottom: 40px;
     letter-spacing: 5px;
     text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.5);
 }
 
 .scroll_wrapper {
@@ -75,11 +75,14 @@ h1 {
 
 
 .navigation {
-  background: #141E30; /* fallback for old browsers */
-  background: -webkit-linear-gradient(#141E30, #243B55, #141E30); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(#141E30 , #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: -o-linear-gradient(#141E30 , #243B55, #141E30); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#141E30 , #243B55, #141E30); /* For Firefox 3.6 to 15 */
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  outline: none;
+  -webkit-transition: box-shadow .5s ease;
+  -moz-transition: box-shadow .5s ease;
+  -o-transition: box-shadow .5s ease;
+  -ms-transition: box-shadow .5s ease;
+  transition: box-shadow .5s ease;
 }
 
 .navigation:before {
@@ -163,9 +166,6 @@ a {
 .btn-space {
     margin-top: 10px;
     padding: 9px 14px;
-
-
-
     line-height: normal;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -242,6 +242,7 @@ a {
     position: relative;
     opacity: .999;
     border-radius: 3px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .btn-fill-home {
@@ -529,7 +530,7 @@ span {
     position: relative;
     width: 120px;
     height: 32px;
-    background-color: #777;
+    background-color: #332737;
     overflow: hidden;
     box-shadow: inset 0 10px 25px rgba(0, 0, 0, 0.5), 0px 1px 2px #fff;
     margin: 10px;
@@ -560,7 +561,7 @@ span {
     width: 60px;
     height: 32px;
     background-color: #6ab3e5;
-    color: #FFF;
+    color: #343637;
     text-align: center;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.7);
     line-height: 32px;
@@ -574,8 +575,13 @@ span {
 
 .toggle input:checked+label {
     margin-left: 60px;
-    background: #3f51b5;
     color: white;
+    background-color: #3f51b5;
+    background-image: -moz-linear-gradient(top, #3f51b5, #4976D3);
+    background-image: -ms-linear-gradient(top, #3f51b5, #4976D3);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3f51b5), to(#4976D3));
+    background-image: -webkit-linear-gradient(top, #3f51b5, #4976D3);
+    background-repeat: repeat-x;
 }
 
 .toggle input:checked+label:before {
@@ -583,7 +589,13 @@ span {
 }
 
 .toggle--on-off label.toggle__label {
-    background-color: #BEC2C3;
+    color: #333333;
+    background-color: #f5f5f5;
+    background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+    background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+    background-repeat: repeat-x;
 }
 
 
@@ -594,15 +606,22 @@ span {
     position: relative;
     width: 262px;
     height: 40px;
-    background-color: #777;
+    background-color: #332737;
     overflow: hidden;
     box-shadow: inset 0 10px 25px rgba(0, 0, 0, 0.5), 0px 1px 2px #fff;
     margin: 10px;
+
 }
 
 .toggle2 input:checked+label {
     margin-left: 131px;
     background: #9b59b6;
+    background-color: #9b59b6;
+    background-image: -moz-linear-gradient(top, #9b59b6, #9f59c6);
+    background-image: -ms-linear-gradient(top, #9b59b6, #9f59c6);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#9b59b6), to(#9f59c6));
+    background-image: -webkit-linear-gradient(top, #9b59b6, #9f59c6);
+    background-repeat: repeat-x;
     color: white;
 }
 
@@ -634,86 +653,15 @@ span {
 }
 
 .toggle--on-off label.toggle__label2 {
-    background-color: #3fb0ac;
-}
+    background: #3fb0ac;
 
-.toggle input:checked+label {
-    margin-left: 60px;
-    background: #4a77d4;
+    background: #3fb0ac;
+    background-image: -moz-linear-gradient(top, #9b59b6, #4fa0ac);
+    background-image: -ms-linear-gradient(top, #9b59b6, #4fa0ac);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#9b59b6), to(#4fa0ac));
+    background-image: -webkit-linear-gradient(top, #3fb0ac, #4fa0ac);
+    background-repeat: repeat-x;
     color: white;
-}
-
-.toggle input:checked+label:before {
-    content: attr(data-on);
-}
-
-.toggle--on-off label.toggle__label {
-    background-color: #BEC2C3;
-}
-
-
-/* Common classes */
-
-.switch {
-    position: relative;
-    width: 14rem;
-    padding: 0 1rem;
-    font-family: 'Lato';
-}
-
-.switch:before {
-    content: '  ';
-    position: absolute;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 3rem;
-    background: #000;
-    border-radius: 30px;
-}
-
-.switch__label {
-    display: inline-block;
-    width: 2rem;
-    padding: 1rem;
-    text-align: center;
-    cursor: pointer;
-    transition: color 200ms ease-out;
-}
-
-.switch__label:hover {
-    color: white;
-}
-
-.switch__indicator {
-    width: 4rem;
-    height: 4rem;
-    position: absolute;
-    top: -.5rem;
-    left: 0;
-    background: blue;
-    border-radius: 50%;
-    transition: transform 600ms cubic-bezier(0.02, 0.94, 0.09, 0.97), background 300ms cubic-bezier(0.17, 0.67, 0.14, 1.03);
-    transform: translate3d(1rem, 0, 0);
-}
-
-.switch input#one:checked~.switch__indicator {
-    background: PaleGreen;
-    transform: translate3d(1.2rem, 0, 0);
-}
-
-.switch input#two:checked~.switch__indicator {
-    background: MediumTurquoise;
-    transform: translate3d(5.5rem, 0, 0);
-}
-
-.switch input#three:checked~.switch__indicator {
-    background: PaleVioletRed;
-    transform: translate3d(10.6rem, 0, 0);
-}
-
-.switch input[type="radio"]:not(:checked), .switch input[type="radio"]:checked {
-    display: none;
 }
 
 

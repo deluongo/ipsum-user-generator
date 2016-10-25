@@ -21,7 +21,7 @@
               @endforeach
               </ul>
             @endif
-            <label for="sentences_per_paragraph"><span class="labl">Sentences per Paragraph</span></label>
+            <span class="labl">Sentences per Paragraph</span>
             <input type="text" name="sentences_per_paragraph" value = "{{old('sentences_per_paragraph', $sentences_per_paragraph)}}" placeholder="How many sentences? (Max: 99)" required="required" />
             @if($errors->get('sentences_per_paragraph'))
               <ul class="errors">

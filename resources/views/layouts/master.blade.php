@@ -17,7 +17,7 @@
 </head>
 <body>
   <div class="scroll_wrapper">
-    <section class="navigation">
+    <div class="navigation">
       <nav>
         <ul>
           <li><a href="/" class="butn btn-green btn-fill-home">HOME</a></li>
@@ -26,12 +26,12 @@
           <li><a href="/password" class="butn btn-blue btn-fill-vert">PASSWORD</a></li>
         </ul>
       </nav>
-    </section>
+  </div>
 
-    <section>
+    <div>
       {{-- Main page content will be yielded here --}}
       @yield('content')
-    </section>
+  </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 

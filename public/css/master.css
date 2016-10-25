@@ -2,12 +2,9 @@
    Basic styling
    ====================================================== */
 
-
-@import url(http://fonts.googleapis.com/css?family=Open+Sans):300,400,600,800;
 @import url("//fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800");
 @import url('https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800');
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:100,200,300,400,500,600,700,800');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
 
 * {
     -webkit-box-sizing: border-box;
@@ -43,7 +40,6 @@ h1 {
     margin-bottom: 40px;
     letter-spacing: 5px;
     text-align: center;
-    text-shadow: rgba(0, 0, 0, 0.5);
 }
 
 .scroll_wrapper {
@@ -91,7 +87,7 @@ h1 {
     background: -moz-radial-gradient(center, ellipse cover, rgba(254, 254, 254, 1) 0%, rgba(254, 254, 254, 0) 50%, rgba(254, 254, 254, 0) 100%);
     background: -o-radial-gradient(center, ellipse cover, rgba(254, 254, 254, 1) 0%, rgba(254, 254, 254, 0) 50%, rgba(254, 254, 254, 0) 100%);
     background: -ms-radial-gradient(center, ellipse cover, rgba(254, 254, 254, 1) 0%, rgba(254, 254, 254, 0) 50%, rgba(254, 254, 254, 0) 100%);
-    background: radial-gradient(center, ellipse cover, rgba(254, 254, 254, 1) 0%, rgba(254, 254, 254, 0) 50%, rgba(254, 254, 254, 0) 100%);
+    background: radial-gradient(rgba(254, 254, 254, 1) 0%, rgba(254, 254, 254, 0) 50%, rgba(254, 254, 254, 0) 100%);
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
     filter: alpha(opacity=70);
     opacity: 0.8;
@@ -455,12 +451,10 @@ input[type='text'], input[type='dropdown'] {
     -o-transition: box-shadow .5s ease;
     -ms-transition: box-shadow .5s ease;
     transition: box-shadow .5s ease;
-
-
     font-size: 10pt;
-    letter-spacing: .3px;
-    font-family: 'Open Sans', sans-serif;
-
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    letter-spacing: 2px;
 }
 
 input[type='text']:focus {
@@ -494,7 +488,7 @@ span {
 
 /* Scalpal Styling */
 
-#none {
+.none {
   color: #fff;
   font-size: 7pt;
   letter-spacing: .3px;
@@ -503,7 +497,7 @@ span {
   letter-spacing: 1.3px;
 }
 
-#output_header {
+.output_header {
   color: #fff;
   font-size: 10pt;
   letter-spacing: .3px;
@@ -516,7 +510,7 @@ span {
     display: flex;
 }
 
-#usr_toggle {
+.usr_toggle {
     display: flex;
 }
 

@@ -12,7 +12,7 @@
         <legend class="settings_legend">FILTER</legend>
           <form method="post" action="/ipsum">
             {{ csrf_field() }}
-            <label for="number_of_paragraphs"><span class="labl"># of Paragraphs</span></label>
+            <span class="labl"># of Paragraphs</span>
             <input type="text" name="number_of_paragraphs" value = "{{old('number_of_paragraphs', $number_of_paragraphs)}}" placeholder="How many paragraphs? (Max: 99)" required="required" />
             @if($errors->get('number_of_paragraphs'))
               <ul class="errors">

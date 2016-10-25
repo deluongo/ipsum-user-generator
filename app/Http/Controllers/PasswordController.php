@@ -10,14 +10,17 @@ class PasswordController extends Controller
 {
 
     /**
-      * Display the specified resource.
-      *
-      * @param
-      * @return \Illuminate\Http\Response
-      */
+    * Display the specified resource.
+    *
+    * @param
+    * @return \Illuminate\Http\Response
+    */
 
-      public function show()
-      {
+    /* ======================================================
+    Display on load
+    ====================================================== */
+    public function show()
+    {
         $wordsErr = '';
         $number_of_words = null;
         $link = null;
@@ -35,7 +38,7 @@ class PasswordController extends Controller
                 $innerHTML= '';
                 $children = $li->childNodes;
                 foreach ($children as $child) {
-                $innerHTML .= trim($child->ownerDocument->saveXML($child));
+                    $innerHTML .= trim($child->ownerDocument->saveXML($child));
                 }
                 $fixed = array_map('strip_tags', array_map('trim', explode("<br/>",trim($innerHTML))));
                 foreach($fixed as $val){
@@ -55,9 +58,9 @@ class PasswordController extends Controller
             $y=$z-1;
             //Formats in accordance with URL pattern
             if ($y < 10)
-                $y='0'.$y;
+            $y='0'.$y;
             if ($z < 10)
-                $z='0'.$z;
+            $z='0'.$z;
             $url = 'dictionary/words-'.$y.'-'.$z.'-hundred.html';
             //Scrape the given URL's
             $new_words = get_words($url);
@@ -115,10 +118,13 @@ class PasswordController extends Controller
 
         $data = ['password_array' => $password_array, 'number_of_words' => $number_of_words, 'link' => $link, 'number' => $number, 'symbol' => $symbol, 'number_status' => $number_status, 'symbol_status' => $symbol_status];
         return view('password.show')->with($data);
-       }
+    }
 
-      public function post(Request $request)
-      {
+    /* ======================================================
+    Display on form submit
+    ====================================================== */
+    public function post(Request $request)
+    {
         $this->validate($request, [
             'number_of_words' => 'required|min:1|max:25|numeric',
             'link' => 'regex:/[^~`^<>]+/',
@@ -151,7 +157,7 @@ class PasswordController extends Controller
                 $innerHTML= '';
                 $children = $li->childNodes;
                 foreach ($children as $child) {
-                $innerHTML .= trim($child->ownerDocument->saveXML($child));
+                    $innerHTML .= trim($child->ownerDocument->saveXML($child));
                 }
                 $fixed = array_map('strip_tags', array_map('trim', explode("<br/>",trim($innerHTML))));
                 foreach($fixed as $val){
@@ -171,9 +177,9 @@ class PasswordController extends Controller
             $y=$z-1;
             //Formats in accordance with URL pattern
             if ($y < 10)
-                $y='0'.$y;
+            $y='0'.$y;
             if ($z < 10)
-                $z='0'.$z;
+            $z='0'.$z;
             $url = 'dictionary/words-'.$y.'-'.$z.'-hundred.html';
             //Scrape the given URL's
             $new_words = get_words($url);
@@ -227,21 +233,21 @@ class PasswordController extends Controller
         }
 
         if ($symbol== 'yes') {
-          $symbol_status = 'checked';
+            $symbol_status = 'checked';
         }
         else {
-          $symbol_status = '';
+            $symbol_status = '';
         }
 
         if ($number == 'yes') {
-          $number_status = 'checked';
+            $number_status = 'checked';
         }
         else {
-          $number_status = '';
+            $number_status = '';
         }
 
 
         $data = ['password_array' => $password_array, 'number_of_words' => $number_of_words, 'link' => $link, 'number' => $number, 'symbol' => $symbol, 'number_status' => $number_status, 'symbol_status' => $symbol_status];
         return view('password.show')->with($data);
     }
-  }
+}

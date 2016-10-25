@@ -18,7 +18,7 @@
         <fieldset>
           <legend class="settings_legend">FILTER</legend>
           <!--Number of users -->
-          <label for="number_of_users"><span class="labl"># of Users</span></label>
+          <span class="labl"># of Users</span>
           <input type="text" name="number_of_users" placeholder="How many users? (Max: 99)" value="{{ $number_of_users }}" required="required" />
           @if($errors->get('number_of_users'))
             <ul class="errors">
@@ -38,7 +38,7 @@
             </div>
           </div>
           <!--Include Address | Checkbox-->
-          <div id="usr_toggle">
+          <div class="usr_toggle">
             <div class="flex-item-toggle">
               <span class="labl"> Address </span>
               <br />
@@ -59,7 +59,7 @@
             </div>
           </div>
           <!--Include Company | Checkbox-->
-          <div id="usr_toggle">
+          <div class="usr_toggle">
             <div class="flex-item-toggle">
               <span class="labl"> Company </span>
               <br />
@@ -81,7 +81,7 @@
             </div>
           </div>
           <!--Include Username | Checkbox-->
-          <div id="usr_toggle">
+          <div class="usr_toggle">
             <div class="flex-item-toggle">
               <span class="labl"> Username </span>
               <br />
@@ -91,7 +91,7 @@
               </div>
               <br/>
             </div>
-            <div id="usr_toggle">
+            <div class="usr_toggle">
               <div class="flex-item-toggle">
                 <span class="labl"> Password </span>
                 <br />
@@ -118,7 +118,7 @@
                 @foreach($users as $user)
                   <p>
                     @for ($x = 0; $x < $num_elements; $x++)
-                      <span id='{{ $user_class[$x]}}'>{{ $user[$x] }}</span><br />
+                      <span class='{{ $user_class[$x]}}'>{{ $user[$x] }}</span><br />
                     @endfor
                   </p>
                 @endforeach

@@ -18,7 +18,7 @@
             <fieldset>
                 <legend class="settings_legend">FILTER</legend>
                 <!--Number of Words | Text Box-->
-                <label for="number_of_words"><span class="labl"># of Words</span></label>
+                <span class="labl"># of Words</span>
                 <input type="text" name="number_of_words" id="num_words" value="{{old('number_of_words', $number_of_words)}}" size=1 placeholder="How many words? (Max: 25)" autofocus>
                 @if($errors->get('number_of_words'))
                   <ul class="errors">
@@ -28,7 +28,7 @@
                   </ul>
                 @endif
                 <!--Separator | Text Box-->
-                <label for="link"><span class="labl">Separator</span></label>
+                <span class="labl">Separator</span>
                 <input type="text" name="link" id="link" value="{{old('link', $link)}}" size=3 placeholder="Which separator?">
                 @if($errors->get('link'))
                   <ul class="errors">

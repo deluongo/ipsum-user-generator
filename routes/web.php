@@ -19,23 +19,23 @@ Route::get('/', function () {
 * Ipsum resources
 */
 # Ipsum landing page, display form
-Route::get('/ipsums', 'IpsumController@show')->name('ipsum.show');
-Route::post('/ipsums', 'IpsumController@post')->name('ipsum.show');
+Route::get('/ipsum', 'IpsumController@show')->name('ipsum.show');
+Route::post('/ipsum', 'IpsumController@post')->name('ipsum.show');
 
 /**
 * User resources
 */
 # Ipsum landing page, display form
-Route::get('/users', 'UserController@show')->name('user.show');
-Route::post('/users', 'UserController@post')->name('user.show');
+Route::get('/user', 'UserController@show')->name('user.show');
+Route::post('/user', 'UserController@post')->name('user.show');
 # Display ipsum text --?? Should these all reference the same page??--
 
 /**
 * Password resources
 */
 # Ipsum landing page, display form
-Route::get('/passwords', 'PasswordController@show')->name('password.show');
-Route::post('/passwords', 'PasswordController@post')->name('password.show');
+Route::get('/password', 'PasswordController@show')->name('password.show');
+Route::post('/password', 'PasswordController@post')->name('password.show');
 /**
 * Prctice resources
 */

@@ -17,13 +17,13 @@
     </head>
     <body>
       <section class="c-hero-flex">
-        <a class="c-hero-flex__item" href="/ipsums">
+        <a class="c-hero-flex__item" href="/ipsum">
           <h2 class="c-hero-flex__title">Ipsum Text</h2>
         </a>
-        <a class="c-hero-flex__item" href="/users">
+        <a class="c-hero-flex__item" href="/user">
           <h2 class="c-hero-flex__title">Dummy User</h2>
         </a>
-        <a class="c-hero-flex__item" href="/passwords">
+        <a class="c-hero-flex__item" href="/password">
           <h2 class="c-hero-flex__title">&nbsp;Password&nbsp;</h2>
         </a>
       </section>

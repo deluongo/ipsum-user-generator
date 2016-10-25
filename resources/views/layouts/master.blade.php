@@ -20,10 +20,10 @@
     <section class="navigation">
       <nav>
         <ul>
-          <li><a href="/" class="butn btn-green btn-fill-home">Home</a></li>
-          <li><a href="/ipsums" class="butn btn-blue btn-fill-vert">Ipsum</a></li>
-          <li><a href="/users" class="butn btn-blue btn-fill-vert">Users</a></li>
-          <li><a href="/passwords" class="butn btn-blue btn-fill-vert">Passwords</a></li>
+          <li><a href="/" class="butn btn-green btn-fill-home">HOME</a></li>
+          <li><a href="/ipsum" class="butn btn-blue btn-fill-vert">IPSUM</a></li>
+          <li><a href="/user" class="butn btn-blue btn-fill-vert">USER</a></li>
+          <li><a href="/password" class="butn btn-blue btn-fill-vert">PASSWORD</a></li>
         </ul>
       </nav>
     </section>

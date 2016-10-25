@@ -10,15 +10,15 @@
 
 @section('content')
   <!--Custom Password Settings -->
-  <h1>xkcd Password Generator</h1>
+  <h1>PASSWORD</h1>
   <div class="flex-container">
     <div class="flex-item one">
-      <form method="post" action="/passwords">
+      <form method="post" action="/password">
         {{ csrf_field() }}
             <fieldset>
-                <legend>Custom Settings</legend>
+                <legend class="settings_legend">FILTER</legend>
                 <!--Number of Words | Text Box-->
-                <label for="number_of_words"><span># of Words</span></label>
+                <label for="number_of_words"><span class="labl"># of Words</span></label>
                 <input type="text" name="number_of_words" id="num_words" value="{{old('number_of_words', $number_of_words)}}" size=1 placeholder="How many words? (Max: 25)" autofocus>
                 @if($errors->get('number_of_words'))
                   <ul class="errors">
@@ -28,7 +28,7 @@
                   </ul>
                 @endif
                 <!--Separator | Text Box-->
-                <label for="link"><span>Separator</span></label>
+                <label for="link"><span class="labl">Separator</span></label>
                 <input type="text" name="link" id="link" value="{{old('link', $link)}}" size=3 placeholder="Which separator?">
                 @if($errors->get('link'))
                   <ul class="errors">
@@ -41,7 +41,7 @@
                 <!--Add a Number | Checkbox-->
                 <div id="password_toggle">
                   <div>
-                    <span> Add a Number </span>
+                    <span class="labl"> Add a Number </span>
                     <br />
                     <div class="toggle toggle--on-off">
                       <input type="checkbox" name="number" class="toggle__input" value="yes" {{ $number_status }} >
@@ -51,7 +51,7 @@
                   </div>
                   <!--Add a Symbol | Checkbox-->
                   <div>
-                    <span> Add a Symbol </span>
+                    <span class="labl"> Add a Symbol </span>
                     <br />
                     <div class="toggle toggle--on-off">
                       <input type="checkbox" name="symbol" class="toggle__input" value="yes" {{ $symbol_status }} >
@@ -60,8 +60,9 @@
                     <br/>
                   </div>
                 </div>
-                <!--Capitalize | Check Box-->
-                <input class="btn btn-primary btn-block btn-space" type="submit" name="submit" value="Generate New Password" />
+                <!--Submmit Button-->
+                <button type="submit" id="form_submit_button" class="btn btn-primary btn-block btn-large btn_margin btn_font">GET PASSWORD</button>
+
             </fieldset>
       </form>
     </div>
@@ -70,12 +71,12 @@
       <!--Display 5 Randomly Generated Passwords -->
       <div>
           <fieldset>
-              <legend>Choose Your Password</legend>
-              <h2>{{$password_array[0]}}</h2>
-              <h2>{{$password_array[1]}}</h2>
-              <h2>{{$password_array[2]}}</h2>
-              <h2>{{$password_array[3]}}</h2>
-              <h2>{{$password_array[4]}}</h2>
+              <legend>XKCD</legend>
+              <p class="typed_output">{{$password_array[0]}}</p>
+              <p class="typed_output">{{$password_array[1]}}</p>
+              <p class="typed_output">{{$password_array[2]}}</p>
+              <p class="typed_output">{{$password_array[3]}}</p>
+              <p class="typed_output">{{$password_array[4]}}</p>
           </fieldset>
       </div>
       <br>

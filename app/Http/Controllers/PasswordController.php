@@ -71,7 +71,7 @@ class PasswordController extends Controller
             $password = '';
             //Select a random words
             for ($i = 1; $i <= 4; $i++) {
-                $word_index = rand(0, count($array_words));
+                $word_index = rand(0, count($array_words)-1);
                 $word = (string)$array_words[$word_index];
                 $password = $password.$word.'-';
             }
@@ -112,7 +112,7 @@ class PasswordController extends Controller
         $number_status = '';
         $symbol_status = '';
 
-        $data = ['password_array' => $password_array, 'number_of_words' => $number_of_words, 'link' => $link, 'number' => $number, 'symbol' => $symbol, 'wordsErr' => $wordsErr, 'number_status' => $number_status, 'symbol_status' => $symbol_status];
+        $data = ['password_array' => $password_array, 'number_of_words' => $number_of_words, 'link' => $link, 'number' => $number, 'symbol' => $symbol, 'number_status' => $number_status, 'symbol_status' => $symbol_status];
         return view('password.show')->with($data);
        }
 
@@ -125,7 +125,7 @@ class PasswordController extends Controller
         ]);
 
         //Set default password values
-        $wordsErr = '';
+
         $number_of_words = $request->input('number_of_words');
         $link = $request->input('link');
         $symbol = $request->input('symbol');
@@ -186,7 +186,7 @@ class PasswordController extends Controller
             $password = '';
             //Select a random words
             for ($i = 1; $i <= $number_of_words; $i++) {
-                $word_index = rand(0, count($array_words));
+                $word_index = rand(0, count($array_words-1));
                 $word = (string)$array_words[$word_index];
                 $password = $password.$word.$link;
             }
@@ -239,7 +239,7 @@ class PasswordController extends Controller
         }
 
 
-        $data = ['password_array' => $password_array, 'number_of_words' => $number_of_words, 'link' => $link, 'number' => $number, 'symbol' => $symbol, 'wordsErr' => $wordsErr, 'number_status' => $number_status, 'symbol_status' => $symbol_status];
+        $data = ['password_array' => $password_array, 'number_of_words' => $number_of_words, 'link' => $link, 'number' => $number, 'symbol' => $symbol, 'number_status' => $number_status, 'symbol_status' => $symbol_status];
         return view('password.show')->with($data);
     }
   }

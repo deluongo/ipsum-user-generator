@@ -11,7 +11,7 @@ to choose from. The user also has the option to choose from 4 inputs to generate
 password. They can determine the number of words, the character that links each word, and 
 add a symbol and/or a number to the end of the password. 
 
-Screencast Demo: COMING SOON!
+Screencast Demo: https://youtu.be/vphG14aFsFk
 
 Note: 100% of the HTML and 80% of the CSS was written by me. I did leverage some codepens
 for design inspiration. I also kept the DOM Parser from P2. The original code can be found 
